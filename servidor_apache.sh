@@ -17,6 +17,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 sudo ufw allow https
 sudo ufw allow http
+sudo ufw allow ssh
 sudo ufw allow 'Apache'
 sudo ufw enable
 sudo ufw status
