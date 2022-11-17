@@ -2,6 +2,7 @@
 sudo apt update
 sudo apt install apache2 -y
 sudo apt install mysql-server -y
+sudo a2enmod rewrite 
 systemctl reload apache2 -y
 sudo apt install software-properties-common apt-transport-https -y
 sudo add-apt-repository ppa:ondrej/php -y
@@ -13,11 +14,10 @@ curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 #sudo apt-get install phpmyadmin
 #sudo echo -e "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 sudo ufw allow https
 sudo ufw allow http
-sudo ufw allow ssh
 sudo ufw allow 'Apache'
 sudo ufw enable
 sudo ufw status
