@@ -13,8 +13,10 @@ curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 #sudo apt-get install phpmyadmin
 #sudo echo -e "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y ca-certificates curl gnupg -y
+sudo mkdir -p /etc/apt/keyrings -y
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+sudo apt-get install nodejs -y
 #activar si vamos a usar un servidor real 
 #sudo ufw allow https
 #sudo ufw allow http
